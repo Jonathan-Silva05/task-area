@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área de Tarefas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="content">
+    <div class="divNewtask">
+      <button id="new-task" class="new-task" onclick="openNewTask()"> Nova Tarefa </button>
+
+      <div id="create-task" class="create-task">
+        <div class="divBtnClose">
+          <button class="btnClose" onclick="closeNewTask()"> X </button>
+        </div>
+        <form>
+          <label for="name_task">Nome da Tarefa</label>
+          <input type="text" id="name_task" oninput="checkTaskInput()" maxlength="50">
+
+          <label for="describeTask">Descrição</label>
+          <textarea type="text" id="describeTask" rows="5" oninput="checkTaskInput()"></textarea>
+
+          <label>Cor da Tarefa</label>
+          <div class="colors">
+            <label for="branco" class="branco colorCheck"></label>
+            <input type="radio" name="colorTask" id="branco" oninput="checkTaskInput()" value="FFFFFF">
+            
+            <label for="vermelho" class="vermelho colorCheck"></label>
+            <input type="radio" name="colorTask" id="vermelho" oninput="checkTaskInput()" value="FF8080">
+            
+            <label for="azul" class="azul colorCheck"></label>
+            <input type="radio" name="colorTask" id="azul" oninput="checkTaskInput()" value="80CEE1">
+            
+            <label for="verde" class="verde colorCheck"></label>
+            <input type="radio" name="colorTask" id="verde" oninput="checkTaskInput()" value="80CE80">
+            
+            <label for="amarelo" class="amarelo colorCheck"></label>
+            <input type="radio" name="colorTask" id="amarelo" oninput="checkTaskInput()" value="E1CE80">
+          </div>
+
+          <div class="btnSave">
+            <button id="save" onclick="createNewTask()" disabled>Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="kanban">
+      <div id="task-list" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="task-list-title">A fazer</div>
+      </div>
+
+      <div id="task-list" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="task-list-title">Em andamento</div>
+      </div>
+
+      <div id="task-list" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="task-list-title">Concluído</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contentTask"></div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
