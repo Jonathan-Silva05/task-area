@@ -6,6 +6,11 @@
     font-family: Arial, sans-serif;
   }
 
+  ::-webkit-scrollbar{
+    visibility: hidden;
+    width: 0px;
+  }
+
   .content {
     height: 100vh;
     user-select: none;
@@ -36,11 +41,6 @@
     transition: all 0.3s ease;
     overflow-y: auto;
     z-index: 100;
-  }
-
-  .create-task::-webkit-scrollbar{
-    visibility: hidden;
-    width: 0px;
   }
 
   .open-create-task {
@@ -150,7 +150,7 @@
     display: flex;
     justify-content: center;
     min-height: 400px;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
   }
 
@@ -258,4 +258,24 @@
     border: none;
     border-radius: 5px;
     font-size: 1em;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    .create-task {
+      width: 80%;
+    }
+
+    .kanban {
+      display: flex;
+      flex-direction: row;
+      justify-content: normal;
+      overflow: auto;
+      padding: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .task-list {
+      scroll-snap-align: center;
+    }
   }
