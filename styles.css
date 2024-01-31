@@ -260,10 +260,9 @@
     font-size: 1em;
   }
 
-
   @media only screen and (max-width: 768px) {
     .create-task {
-      width: 80%;
+      width: 70%;
     }
 
     .kanban {
@@ -277,5 +276,11 @@
 
     .task-list {
       scroll-snap-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .create-task {
+      width: 80%;
     }
   }
